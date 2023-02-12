@@ -1,0 +1,42 @@
+schema {
+    query: Query, 
+}
+
+type Query{
+    # ein Playlist finden
+    lookupOperation(id:String!):[Playlist]
+}
+
+
+type Playlist{
+    id : String!,
+    name :String,
+    created_date :String,
+    song:[Song],
+    followers:[User],
+    owner:[User]
+}
+
+
+type User{
+    id : String!,
+    name :String,
+    gender :String,
+}
+
+type Follower{
+    id : String!,
+}
+
+type Song{
+    id : String,
+    artist :String,
+    title :String,
+    position: Int
+}
+
+type songs{
+    id : String!,
+    position :Int,
+}
+
